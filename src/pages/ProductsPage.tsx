@@ -75,8 +75,8 @@ export default function ProductsPage() {
       price: parseFloat(formData.price),
       category: formData.category,
       stock: parseInt(formData.stock),
-      description: formData.description || undefined,
-      barcode: formData.barcode || undefined
+      description: formData.description === "" ? null : formData.description,
+      barcode: formData.barcode === "" ? null : formData.barcode
     };
 
     if (editingProduct) {
