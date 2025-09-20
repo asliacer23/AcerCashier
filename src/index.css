@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* POS System Design System - Minimal black/white with navy accents */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 19% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 19% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 19% 15%;
+
+    /* Navy blue primary for POS accent elements */
+    --primary: 220 60% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 19% 15%;
+
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 210 19% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 60% 25%;
+
+    /* POS specific design tokens */
+    --pos-navy: 220 60% 25%;
+    --pos-navy-light: 220 60% 35%;
+    --pos-navy-dark: 220 60% 15%;
+    --pos-success: 142 76% 36%;
+    --pos-warning: 38 92% 50%;
+    --pos-receipt: 210 40% 98%;
+    
+    /* Professional shadows for POS elements */
+    --shadow-pos: 0 1px 3px 0 hsl(220 60% 25% / 0.1), 0 1px 2px -1px hsl(220 60% 25% / 0.1);
+    --shadow-pos-lg: 0 10px 15px -3px hsl(220 60% 25% / 0.1), 0 4px 6px -4px hsl(220 60% 25% / 0.1);
+    
+    /* Smooth transitions for professional feel */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 20% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 220 60% 55%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 20% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 220 20% 15%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 220 60% 55%;
+    
+    /* Dark mode POS tokens */
+    --pos-navy: 220 60% 55%;
+    --pos-navy-light: 220 60% 65%;
+    --pos-navy-dark: 220 60% 45%;
+    --pos-receipt: 220 20% 15%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* POS System Custom Utilities */
+@layer components {
+  .pos-button {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-sm;
+  }
+  
+  .pos-card {
+    @apply bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-200;
+  }
+  
+  .pos-receipt {
+    @apply bg-[hsl(var(--pos-receipt))] border border-border rounded-lg p-4 font-mono text-sm;
+  }
+  
+  .pos-input {
+    @apply bg-background border border-input rounded-md px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring;
+  }
+  
+  .pos-nav {
+    @apply bg-primary text-primary-foreground shadow-lg;
+  }
+}
